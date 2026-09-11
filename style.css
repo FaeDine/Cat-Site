@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Special+Elite&display=swap');
 
 :root {
-  --iron: #211a15;
-  --iron-panel: #2b2119;
-  --brass: #b5872a;
-  --brass-bright: #d9a941;
-  --copper: #a85c32;
-  --verdigris: #5f8575;
-  --parchment: #e9dcbd;
-  --ink: #efe3c8;
+  --candy-bg: #fff8f3;
+  --candy-accent: #ffc0cb;
+  --candy-pink: #ff69b4;
+  --candy-purple: #da70d6;
+  --candy-red: #ff1493;
+  --candy-yellow: #ffd700;
+  --candy-blue: #87ceeb;
+  --candy-green: #90ee90;
+  --candy-orange: #ffa500;
+  --text-dark: #5a3a5a;
+  --text-light: #ffffff;
   --rivet: #14100c;
 }
 
@@ -18,14 +21,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Special Elite', 'Courier New', monospace;
-  color: var(--ink);
-  background-color: var(--iron);
+  color: var(--text-dark);
+  background-color: var(--candy-bg);
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(181, 135, 42, 0.16) 0, transparent 24%),
-    radial-gradient(circle at 88% 12%, rgba(168, 92, 50, 0.16) 0, transparent 26%),
-    radial-gradient(circle at 20% 88%, rgba(95, 133, 117, 0.12) 0, transparent 26%),
-    radial-gradient(circle at 92% 82%, rgba(181, 135, 42, 0.12) 0, transparent 24%),
-    repeating-linear-gradient(135deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 26px);
+    radial-gradient(circle at 12% 18%, rgba(255, 192, 203, 0.3) 0, transparent 24%),
+    radial-gradient(circle at 88% 12%, rgba(218, 112, 214, 0.25) 0, transparent 26%),
+    radial-gradient(circle at 20% 88%, rgba(135, 206, 235, 0.2) 0, transparent 26%),
+    radial-gradient(circle at 92% 82%, rgba(144, 238, 144, 0.25) 0, transparent 24%);
   background-attachment: fixed;
   line-height: 1.65;
 }
@@ -44,9 +46,9 @@ header.site-header {
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: var(--brass-bright);
+  color: var(--candy-pink);
   margin: 0 0 8px;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .site-title {
@@ -54,10 +56,14 @@ h1, h2, h3 {
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  background: linear-gradient(135deg, var(--candy-pink), var(--candy-purple), var(--candy-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .tagline {
-  color: var(--verdigris);
+  color: var(--candy-purple);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   font-style: italic;
@@ -68,7 +74,7 @@ h1, h2, h3 {
   font-size: 1.3rem;
   letter-spacing: 0.6em;
   margin: 22px 0;
-  color: var(--copper);
+  color: var(--candy-orange);
   user-select: none;
 }
 
@@ -82,13 +88,13 @@ h1, h2, h3 {
 .cat-card {
   display: block;
   text-decoration: none;
-  color: inherit;
-  background: linear-gradient(180deg, var(--iron-panel), #211914);
-  border-radius: 6px;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, rgba(255, 192, 203, 0.5), rgba(218, 112, 214, 0.4));
+  border-radius: 20px;
   padding: 26px 20px;
   text-align: center;
-  border: 2px solid var(--brass);
-  box-shadow: 0 0 0 4px var(--rivet), 0 8px 20px rgba(0, 0, 0, 0.45), inset 0 0 24px rgba(181, 135, 42, 0.06);
+  border: 3px solid var(--candy-pink);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
 }
@@ -98,19 +104,19 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 8px;
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--brass-bright), #5a4114 70%);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+  background: radial-gradient(circle at 35% 35%, var(--candy-red), #c4186e 70%);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.8);
 }
 .cat-card::before { left: 8px; }
 .cat-card::after { right: 8px; }
 
 .cat-card:hover {
   transform: translateY(-4px);
-  border-color: var(--brass-bright);
-  box-shadow: 0 0 0 4px var(--rivet), 0 12px 26px rgba(0, 0, 0, 0.55), 0 0 18px rgba(217, 169, 65, 0.25);
+  border-color: var(--candy-red);
+  box-shadow: 0 12px 26px rgba(255, 105, 180, 0.4), 0 0 18px rgba(255, 20, 147, 0.35);
 }
 
 .cat-portrait {
@@ -127,24 +133,24 @@ h1, h2, h3 {
 
 .cat-title {
   font-style: italic;
-  color: var(--copper);
+  color: var(--candy-purple);
   font-size: 0.95rem;
   margin-bottom: 10px;
 }
 
 .cat-blurb {
   font-size: 0.92rem;
-  color: var(--parchment);
-  opacity: 0.85;
+  color: var(--text-dark);
+  opacity: 0.9;
 }
 
 /* individual cat page */
 .cat-page {
-  background: linear-gradient(180deg, var(--iron-panel), #211914);
-  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 192, 203, 0.4), rgba(218, 112, 214, 0.3));
+  border-radius: 20px;
   padding: 40px 32px;
-  border: 2px solid var(--brass);
-  box-shadow: 0 0 0 4px var(--rivet), 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(181, 135, 42, 0.05);
+  border: 3px solid var(--candy-pink);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
   position: relative;
 }
 
@@ -153,11 +159,11 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 10px;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--brass-bright), #5a4114 70%);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+  background: radial-gradient(circle at 35% 35%, var(--candy-red), #c4186e 70%);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.8);
 }
 .cat-page::before { left: 10px; }
 .cat-page::after { right: 10px; }
@@ -180,23 +186,24 @@ h1, h2, h3 {
 }
 
 .badge {
-  background: linear-gradient(180deg, var(--brass-bright), var(--copper));
-  color: var(--rivet);
+  background: linear-gradient(180deg, var(--candy-yellow), var(--candy-orange));
+  color: var(--text-dark);
   padding: 6px 14px;
-  border-radius: 3px;
+  border-radius: 20px;
   font-family: 'Cinzel', serif;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border: 1px solid #5a4114;
+  border: 2px solid #ffa500;
 }
 
 .section-title {
   font-size: 1.2rem;
-  border-bottom: 2px dashed var(--copper);
+  border-bottom: 2px dashed var(--candy-purple);
   padding-bottom: 6px;
   margin-top: 28px;
+  color: var(--candy-pink);
 }
 
 ul.traits {
@@ -211,17 +218,17 @@ ul.traits li {
 }
 
 ul.traits li::before {
-  content: "⚙";
+  content: "🍭";
   position: absolute;
   left: 0;
-  color: var(--brass);
+  color: var(--candy-red);
 }
 
 blockquote.catquote {
   font-family: 'Cinzel', serif;
   font-style: italic;
-  color: var(--brass-bright);
-  border-left: 3px solid var(--copper);
+  color: var(--candy-pink);
+  border-left: 3px solid var(--candy-purple);
   padding-left: 16px;
   margin: 24px 0;
   font-size: 1.1rem;
@@ -231,16 +238,16 @@ blockquote.catquote {
   display: inline-block;
   margin-top: 32px;
   text-decoration: none;
-  color: var(--iron);
+  color: var(--text-light);
   font-weight: 700;
   font-family: 'Cinzel', serif;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-size: 0.85rem;
-  background: linear-gradient(180deg, var(--brass-bright), var(--copper));
-  border: 1px solid #5a4114;
+  background: linear-gradient(180deg, var(--candy-pink), var(--candy-red));
+  border: 2px solid var(--candy-red);
   padding: 8px 18px;
-  border-radius: 3px;
+  border-radius: 20px;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
@@ -260,6 +267,6 @@ footer.site-footer {
   text-align: center;
   margin-top: 56px;
   font-size: 0.85rem;
-  color: var(--verdigris);
-  opacity: 0.85;
+  color: var(--candy-purple);
+  opacity: 0.9;
 }
